@@ -1,0 +1,276 @@
+@font-face {
+  font-family: "The Book font";
+  src: url("fonts/The Book.otf");
+}
+
+@font-face {
+  font-family: "Go around the books font";
+  src: url("fonts/go_around_the_books/go around the books.ttf");
+}
+
+@font-face {
+  font-family: "Go around the books - symbols font";
+  src: url("fonts/go_around_the_books_symbols/go around the books - symbols.ttf");
+}
+
+@font-face {
+  font-family: "Dino";
+  src: url("fonts/Dinofiles.ttf");
+}
+
+* {
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  /* Align-items center is important as it hides where the leaf will be spawned */
+  align-items: center;
+  justify-content: center;
+  background: url("FoodBackgroundNomeat.jpg") no-repeat center fixed;
+  background-size: cover;
+  /* Be able to have a realistic view */
+  perspective: 2500px;
+  /* Have all the texts in the book to be centered */
+  text-align: center;
+}
+
+h1 {
+  font-family: "Dino";
+  font-size: 50px;
+  margin-top: 25px;
+}
+
+h2 {
+  font-family: "The Book font";
+  font-size: 30px;
+}
+
+ol {
+  margin-top: 30px;
+  font-family: "Dino";
+  list-style-type: decimal; 
+}
+
+
+li a {
+  font-family: "Dino";
+  color: #00008B;
+  font-size: 23px;
+  line-height: 50px;
+}
+
+svg {
+  margin-left: 7px;
+}
+
+/* ALL CLASSES */
+
+/* Small transformation so it gives an idea for the user to know what they are hovering on  */
+.enlarger  {
+transition: transform .5s ease;
+}
+
+.enlarger:hover {
+  transform: scale(1.4);
+}
+
+/* PINK BOOKLET */
+/* This is the cover of the green booklet */
+.front_cover h1 {
+  font-size: 80px;
+}
+
+
+.written_page h1{
+  color: #8b008b;
+}
+
+.forPinkHovers:hover {
+  color: #09e766;
+}
+
+.front_cover img {
+  width: 230px;
+  /* set the image of myself to circle so it looks like a frame */
+  border-radius: 50%;
+  margin: 30px;
+}
+
+.front_cover h2 {
+  font-size: 32px;
+}
+
+.written_page h2{
+  color: #ffa07a;
+}
+
+/* A doodle font to add at the end of the lists */
+.doodles {
+  font-family: "Go around the books - symbols font";
+  color: #00008B;
+}
+
+/* layout green booklet */
+.green_book {
+  display: flex;
+  margin-right: 400px;
+  align-items: center;
+}
+
+/* hover to open the pink booklet*/
+.green_book:hover .front_cover {
+  transform: rotateX(13deg) rotateY(-180deg);
+}
+
+/* Animate like the pages in the booklet are flipping  */
+.green_book:hover .blank_page {
+  transform: rotateX(13deg) rotateY(-180deg);
+  z-index: 2;
+}
+
+.front_cover {
+  transition-duration: 3.2s;
+  /* z-index 1 to bring the front cover to the very top */
+  z-index: 1;
+}
+
+/* Back cover of the pink booklet  */
+.back_cover {
+   /* Back cover z-index of -2 so it is at the very bottom of the book */
+  z-index: -2;
+}
+
+.front_cover,
+.back_cover {
+  position: absolute;
+  width: 27.75rem;
+  height: 37.5rem;
+  background: #66bd50;
+  border-radius: 0px 25px 25px 0px;
+  /* make it look like the book is glowing - inspired by fairy books */
+  box-shadow: 5px 5px 40px #FFFAE4;
+  transform: rotateX(12deg);
+  /* Make the pink cover in the book flip from right to left */
+  transform-origin: left center;
+}
+
+.blank_page,
+.written_page {
+  position: absolute;
+  width: 25rem;
+  height: 34rem;
+  border-radius: 0px 25px 25px 0px;
+  /* book has a tint of yellow to look like organic pages in a real book */
+  background: -webkit-linear-gradient(left, #f2eecb 0%, #fffbf6 100%);
+  background: linear-gradient(left, #f2eecb 0%, #fffbf6 100%);
+  transform: rotateX(12deg);
+  /* Make the pages in the book flip from right to left */
+  transform-origin: left center;
+   /* Z-index of -1 so it is beneath the front cover but also in front the back cover */
+  z-index: -1;
+}
+
+
+/* For the user to open the book, allow them to hover using their mouse over the front cover of the pink booklet */
+.green_book:hover .front_cover {
+  transition-duration: 2s;
+}
+
+/* When user hovers, the pages begin to flip */
+.green_book:hover .blank_page:nth-child(2) {
+  transition-duration: 3s;
+}
+
+.green_book:hover .blank_page:nth-child(3) {
+  transition-duration: 2.5s;
+}
+
+.green_book:hover .blank_page:nth-child(4) {
+  transition-duration: 2s;
+}
+
+/* this is in progress of the pages in the book flipping */
+.blank_page:nth-child(2) {
+  transition-duration: 3s;
+}
+
+.blank_page:nth-child(3) {
+  transition-duration: 2s;
+}
+
+.blank_page:nth-child(4) {
+  transition-duration: 1.5s;
+}
+
+
+/* LEAVES */
+.leaves_falling li{
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  /* location of where the leaves will start falling from */
+  margin: 0px 100px 1000px -350px;
+  background:url("images/leavess_ccexpress.png");
+  /* For the leaves to fall naturally like there's gravity affecting it, I have set the cubix-bezier 0.55 so the leaves would fall from slow to faster  */
+  animation: leaves_falling 7s infinite cubic-bezier(0.55, 0, 1, 1);
+  -webkit-animation: leaves_falling 7s infinite cubic-bezier(0.55, 0, 1, 1);
+  /* z-index of -1 so the leaves can go through the cover of the book */
+  /* The purpose of choosing z-index -1 is because it looks like the leaf has suddenly fall into the book you're reading in the garden */
+  z-index: -1;
+};
+
+/* When the leaves will start falling */
+.leaves_falling li:nth-child(1) {
+  animation-delay: 9.5s;
+}
+.leaves_falling li:nth-child(2) {
+  animation-delay: 5.5s;
+}
+.leaves_falling li:nth-child(3) {
+  animation-delay: 8.5s;
+}
+.leaves_falling li:nth-child(4) {
+  animation-delay: 3.5s;
+}
+.leaves_falling li:nth-child(5) {
+  animation-delay: 4s;
+}
+.leaves_falling li:nth-child(6) {
+  animation-delay: 6.5s;
+}
+.leaves_falling li:nth-child(7) {
+  animation-delay: 1.5s;
+}
+.leaves_falling li:nth-child(8) {
+  animation-delay: 4.85s;
+}
+.leaves_falling li:nth-child(9) {
+  animation-delay: 7.7s;
+}
+.leaves_falling li:nth-child(10) {
+  animation-delay: 9.5s;
+}
+
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 600px) {
+  .leaves_falling {
+    margin: 0px 300px 1000px -300px;
+  }
+  @keyframes leaves_falling{
+      0% {
+          opacity: 1;
+          transform: translate(0, 0px) rotateZ(0deg);
+      }
+      60% {
+          opacity: 1;
+          transform: translate(50px, 1000px) rotateZ(300deg);
+      }
+      100% {
+          opacity: 0;
+          transform: translate(100px, 1000px) rotateZ(360deg);
+      }
+  }
+}

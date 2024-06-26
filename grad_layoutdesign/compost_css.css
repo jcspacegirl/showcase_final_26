@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "Super Creamy";
+    src: url("fonts/Super_Creamy_Personal_Use.ttf");
+  }
+
+  @font-face {
+    font-family: "ScoreBoard";
+    src: url("fonts/SCOREBOARD.ttf");
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url("images/vecteezy_bright-green-leaf-background-vector_4899585.jpg") no-repeat center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+h1, p , li{
+    text-align: center;
+    font-family: "Super Creamy";
+}
+
+p, li{
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;;
+}
+
+h2 {
+    text-align: center;
+    font-family: "ScoreBoard";
+    font-size: 50px;
+}
+
+/* .center-image {
+    display: block;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 50%; 
+  } */
+
+  #items img {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    transition: transform 0.2s; /* Smooth transformation for scaling */
+}
+
+#items img:active {
+    transform: scale(1.1); /* Scales up the image when it is being dragged */
+}
+
+#bins {
+    display: flex;
+    justify-content: center; /* This centers the bins horizontally in their container */
+    align-items: center; /* This ensures the bins are aligned in the middle vertically */
+    margin: 20px auto; /* Centers the container horizontally and gives some vertical space */
+}
+
+#compostBin, #recyclingBin {
+    flex: 1; /* Gives each bin equal width in the container */
+    height: 400px;
+    border: 2px dashed green;
+    margin: 10px; /* Adds space between the bins */
+    padding: 10px;
+    background-size: cover; /* Ensures the background images cover the whole area */
+    background-position: center; /* Centers the background images */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the content (like dropped images) inside the bins */
+}
+
+#compostBin {
+    background-image: url('images/compost_bin.png');
+}
+#recyclingBin {
+    background-image: url('images/recycle_bin.png');
+}
+
+
+@media (max-width: 768px) {
+    #bins {
+        flex-direction: column; /* Stacks the bins vertically on small screens */
+    }
+
+    #compostBin, #recyclingBin {
+        margin: 10px auto; /* Adjusts margins for vertical stacking */
+        width: 90%; /* Makes bins wider to fit the screen better */
+    }
+}
+
+
+#compostBin img, #recyclingBin img {
+    width: 100px; /* Maintain the same width as before being dragged */
+    height: auto; /* Maintain aspect ratio */
+    transition: none; /* Remove any scale transformation upon dragging into the bin */
+}
+
+#compostBin p, #recyclingBin p {
+    margin: 0; /* Adjusts margin for better alignment */
+    color: darkgreen;
+    font-size: 16px;
+}
+
+#progressBar {
+    width: 80%;
+    background-color: #e0e0e0;
+    margin: 20px auto;
+    border-radius: 25px;
+}
+
+#progressFill {
+    height: 30px;
+    width: 0;
+    background-color: green;
+    border-radius: 25px;
+    transition: width 0.5s;
+}
+
+.dropdown {
+    position: relative; /* Corrects dropdown position within a relative container */
+    display: inline-block; /* Aligns dropdown in line with other content */
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Ensures there is no extra space around the button */
+}
+
+.dropbtn img {
+    width: 50px;
+    height: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(175, 74%, 85%);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Super Creamy";
+    font-size: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.red {
+    color: #A52A2F;
+}
+
+.completion-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Use block to allow margin auto to work */
+    font-size: 16px;
+    margin: 10px auto; /* Centers the button horizontally */
+    cursor: pointer;
+    width: 50%; /* Optional: Adjust this as needed to suit your design */
+}
+
+

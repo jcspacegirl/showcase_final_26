@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composting Adventure Game</title>
+    <link rel="stylesheet" href="compost_css.css">
+</head>
+<body>
+    <nav class="dropdown">
+        <button class="dropbtn">
+            <img src="images/foodwaste_icon.png" alt="Menu" style="width: 120px; height: 120px;">
+        </button>
+        <div class="dropdown-content">
+            <a href="main.html">Home</a>
+            <a href="quiz.html">Food Waste Quiz</a>
+            <a href="environmental.html">Lily's Story</a>
+            <a href="compost.html">> Compost Adventure</a>
+            <a href="personal_minigame.html">Memory Cards</a>
+        </div>
+    </nav>
+    <div id="gameContainer">
+        <header>
+            <h1><u>Welcome to the Composting Adventure Game!</u></h1>
+        </header>
+        <section id="instructions">
+            <p>Compost is like a special kind of dirt made from old plants and food scraps. Imagine you have some banana peels, apple cores, and leaves from the garden. Instead of throwing them in the trash, you can put them in a compost bin. Over time, these scraps break down and turn into a rich, dark soil.
+                This special soil is really good for helping plants grow. It's like a vitamin for flowers, vegetables, and other plants in the garden. When we use compost, we help the Earth by recycling old plant materials into something new and useful, rather than letting them go to waste. So, composting is our way of helping nature by making sure nothing useful gets thrown away. Think about Benny the banana, do you still want to hurt Benny after imagining a world of sufferings?<br></p>
+            <p>In this game, you'll see pictures of things like banana peels, plastic bags, and old shoes. Your job is to drag each picture into our special bin. But wait! Not everything goes in the same bin.</p>
+            <ul>
+                <li>Food scraps like banana peels and apple cores go into the compost bin because they can turn into dirt that helps plants grow.</li>
+                <li>Things like plastic bags and cans go into the recycling bin because they can be made into new things instead of going to the trash.</li>
+            </ul>
+            <p>Each time you put something in the right bin, you get points and see your score go up. If you put something in the wrong bin, you’ll get a message telling you the right place for it, and you’ll try again!</p>
+            <p class="red">Let’s see how many points you can score by helping keep our Earth clean and happy! Try full up the bar in one go!</strong></p>
+            <p class="red">Ready to play? Drag the items to the right bins and let’s see how much you can score!</p>
+        </section>
+        <section id="gameBoard">
+            <div id="items">
+                <img src="images/banana_peel.png" alt="Banana Peel" draggable="true" id="bananaPeel">
+                <img src="images/apple_core.png" alt="Apple Core" draggable="true" id="appleCore">
+                <img src="images/plastic_bag.png" alt="Plastic Bag" draggable="true" id="plasticBag">
+                <img src="images/can_png.png" alt="Can" draggable="true" id="can">
+                <img src="images/eggshells.png" alt="Egg Shells" draggable="true" id="eggshell">
+                <img src="images/Shoe.png" alt="Shoe" draggable="true" id="shoe">
+                <img src="images/pizza_box.png" alt="Pizza Box" draggable="true" id="pizza_box">
+                <img src="images/nutshell.png" alt="Nut Shells" draggable="true" id="nutshell">
+                <img src="images/rice.png" alt="Rice" draggable="true" id="rice">
+                <img src="images/vegetable.png" alt="Vegetable" draggable="true" id="vegetable">
+            </div>
+            <div id="bins">
+                <div id="compostBin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="recyclingBin" class="bin" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </section>
+        <section id="progress">
+            <h2 class="red">Score: <span id="score">0</span></h2>
+            <div id="progressBar">
+                <div id="progressFill"></div>
+            </div>
+        </section>
+    </div>
+    <script src="compost.js"></script>
+</body>
+</html>

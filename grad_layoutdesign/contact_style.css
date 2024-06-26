@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Menulist Beauty";
+  src: url("fonts/menulist_beauty/Menulist Beauty - PERSONAL USE.ttf");
+}
+
+@font-face {
+  font-family: "Love Marker";
+  src: url("fonts/love_marker/Love Marker Italic.otf");
+}
+
+@font-face {
+  font-family: "Maxi Marker";
+  src: url("fonts/maxi_marker/Maxi Marker.otf");
+}
+
+@font-face {
+  font-family: "Dans Hand Writing";
+  src: url("fonts/DansHandWriting.ttf");
+}
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body{
+  background: url("images/smelly-stinking-littering-waste-dump-landfill-vector-23712636.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Maxi Marker";
+  font-size: 40px;
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #9400D3;
+}
+
+h2 {
+  font-family: "Love Marker";
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #e75480;
+}
+
+h3 {
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+em {
+  font-size: 9px;
+}
+
+a {
+  color: black;
+}
+
+input {
+  border: none;
+}
+
+svg {
+  margin-left: 7px;
+}
+
+/* IDs */
+#submitButton {
+  border: 0px;
+  background-color: orange;
+  margin-top: 10px;
+  margin-right: 50px;
+  width: 580px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#description{
+  border: 0px solid;
+  margin-bottom: 5px;
+  resize: vertical;
+}
+
+#submitButton:hover{
+  background: #f2eecb;
+}
+
+/* warning message */
+#invalid{
+  background: #ff033e;
+  text-align: center;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+
+/* CLASSES */
+.paper{
+  position: absolute;
+  width: 650px;
+  top: 53%;
+  left: 50%;
+  padding: 40px;
+  border-radius: 65px;
+  transform: translate(-50%,-50%);
+  background: url("images/paperBackground.jpg");
+}
+
+.paper textarea, input, label, h3 {
+  font-family: "Dans Hand Writing";
+  font-size: 23.5px;
+}
+
+.paper .user_input input[type="text"], .paper textarea{
+  border: 0px solid;
+  width: 570px;
+  padding: 5px;
+}
+
+.paper .user_input {
+  margin-bottom: 20px;
+}
+
+
+/* NAVIGATION */
+nav {
+  z-index: 1;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.menu {
+  z-index: 1;
+  border: 4px;
+  border-style: solid;
+  border-color: #FFF;
+  width: 110px;
+  height: 95px;
+  background: url("images/thermo.png");
+  /* Be able to make the pages flip looks realistically  */
+  perspective: 200px;
+
+}
+
+/* The design of this menu button is to imitate pages inside of a book is getting flipped backwards*/
+.menu_paper {
+  width: 55px;
+  height: 95px;
+  top: -4px;
+  right: 50px;
+  border: 4px;
+  border-style: solid;
+  border-color: #FFF;
+  border-right: 1px dashed white;
+  position: absolute;
+  background: url("images/thermo.png");
+  /* This menu button will have a 3D look */
+  transform-style: preserve-3d;
+  /* The book is going to flip to the from left to right */
+  transform-origin: right;
+  -webkit-transform-origin: right;
+}
+
+/* animation for menu button book to flip */
+.menu .menu_paper:nth-child(1) {
+  /* consider firefox/safari users */
+  /* cubic-bezier P0 at 0.30 because a larger number would make the book flip too fast and looks unnatural */
+  -webkit-animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation-delay: 2.5s;
+}
+
+.menu .menu_paper:nth-child(2) {
+  -webkit-animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation: turning 1s cubic-bezier(0.30, 0.25, 1, .75) infinite;
+  animation-delay: 2;
+}
+
+.menu .menu_paper:nth-child(3) {
+  -webkit-animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation-delay: 1.5s;
+}
+
+.menu .menu_paper:nth-child(4) {
+  -webkit-animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation: turning 1s cubic-bezier(0.30, 0.25, 1, 0.75) infinite;
+  animation-delay: 1s;
+}
+
+/* DROP DOWN NAVIGATION */
+#navigation{
+  float: left;
+}
+
+#navigation:hover{
+  background-color: #FFFDD0;
+}
+
+#navigation .navigation_decor {
+  background-color: inherit;
+  border: none;
+  padding: 10px 10px;
+}
+
+#navigation:hover .links_to_other_sites {
+  display: block;
+}
+
+.links_to_other_sites {
+  z-index: 1;
+  position: absolute;
+  display: none;
+  background-color: #f2eecb;
+}
+
+.links_to_other_sites a {
+  font-family: "Menulist Beauty";
+  padding: 20px 40px;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.links_to_other_sites a:hover {
+  background-color: #FFD700;
+}
+
+/* Let the user have an idea which page they are currently on (location), out of all the sites in this portflio have */
+.tinted {
+  color: #787878;
+  background-color: #ffffbf;
+}
+
+/* social media  */
+.social-nav{
+  position: fixed;
+  top: 75%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+.enlarger svg{
+transition: transform .5s ease;
+}
+
+/* enlarge the svg icons when hovered */
+.enlarger:hover svg{
+  transform: scale(1.5);
+}
+
+.social-nav ul {
+  list-style: none;
+}
+
+/* KEYFRAMES for menu button book*/
+/* the key idea for this is to rotate the book steadily  */
+@keyframes turning {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+    }
+}
+
+@-webkit-keyframes turning {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+    }
+}
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 900px) {
+  .social-nav{
+    top: 5%;
+    right: 0;
+    transform: translateX(80%);
+  }
+
+}

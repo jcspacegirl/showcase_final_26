@@ -1,0 +1,58 @@
+[
+    {
+       "question": "What can happen to the environment when we waste food?",
+        "choice1": "It creates more pollution",
+        "choice2": "It wastes water and energy",
+        "choice3": "It harms animals and their homes",
+       "choice4": "All of the above",
+       "answer": 4
+    },
+    {
+        "question": "Imagine we saved a quarter of the food that gets wasted every year. How many people could we feed with it?",
+        "choice1": "The whole city",
+        "choice2": "Everyone in our school",
+        "choice3": "870 million people",
+        "choice4": "1000 people",
+        "answer": 3
+    },
+    {
+        "question": "Food waste can release harmful gases into the air. What is the correct statement?",
+        "choice1": "True, food waste can release harmful gases into the air",
+        "choice2": "False, food waste does not release harmful gases into the air",
+        "choice3": "There is no scientific evidence to prove this yet.",
+        "choice4": "Only if the food waste is eaten by a mischievous dragon who breathes fire!",
+        "answer": 1
+    },
+    {
+        "question": "Why is it important to reduce food waste?",
+        "choice1": "It helps save money",
+        "choice2": "It protects the environment",
+        "choice3": "It conserves natural resources",
+        "choice4": "All of the above",
+        "answer": 4
+    },
+    {
+        "question": "Imagine you are a carrot. What would you say to the person who is about to throw you away?",
+        "choice1": "I'm all wrinkly, just toss me!",
+        "choice2": "Wait, I can be made into a delicious soup!",
+        "choice3": "Please compost me so I can help grow new plants!",
+        "choice4": "I don't care, I'm just a carrot",
+        "answer": 3
+    },
+    {
+        "question": "What is food waste?",
+        "choice1": "Food that is no longer good to eat",
+        "choice2": "Food that is still good but not needed right now",
+        "choice3": "Food that is thrown away but it is still edible",
+        "choice4": "Food that is donated to people in need",
+        "answer": 3
+    },
+    {
+        "question": "Your family ordered too much pizza for dinner. What should you do with the leftovers?",
+        "choice1": "Throw it all away",
+        "choice2": "Eat it all for breakfast, lunch, and dinner",
+        "choice3": "Put the leftovers in the fridge to eat later",
+        "choice4": "Feed it to the dog",
+        "answer": 3
+    }
+]
